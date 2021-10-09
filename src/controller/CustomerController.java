@@ -7,10 +7,12 @@
 
 package controller;
 
+import DB.DBConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -18,6 +20,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class CustomerController {
     public TextField txtCustomerID;
@@ -30,13 +35,26 @@ public class CustomerController {
     ///DB persisting
 
     ///lead functions
-    private void createCustomer(){
+    private void createCustomer() throws SQLException, ClassNotFoundException {
 
         String id = txtCustomerID.getText();
         String name = txtCustomerName.getText();
-        String age = txtCustomerAge.getText();
+        int age = Integer.parseInt(txtCustomerAge.getText());
         String address = txtCustomerAddress.getText();
 
+        PreparedStatement pstm = DBConnection.
+                getInstance().
+                getConnection().
+                prepareStatement("insert into customer values(?,?,?,?)");
+        pstm.setObject(1, id);
+        pstm.setObject(2, name);
+        pstm.setObject(3, age);
+        pstm.setObject(4, address);
+        if(pstm.execute()){
+            new Alert(Alert.AlertType.INFORMATION, "SUCCESSFULLY ADDED").show();
+        }else{
+            new Alert(Alert.AlertType.ERROR, "An error occured while adding a customer").show();
+        }
 
     }
 
@@ -58,12 +76,24 @@ public class CustomerController {
 
     public void txtCustomerAddressOnAction(ActionEvent actionEvent) {
 
-        createCustomer();
+        try {
+            createCustomer();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     public void btnCreateCustomerOnAction(ActionEvent actionEvent) {
 
-        createCustomer();
+        try {
+            createCustomer();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     public void btnBackOnAction(MouseEvent mouseEvent) throws IOException {
