@@ -24,6 +24,8 @@ public class DashboardController {
 
     public void btnCustomerOnAction(ActionEvent actionEvent) throws IOException {
 
+        System.out.println();
+
         Parent root = FXMLLoader.load(this.getClass().getResource("../views/CustomerView.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(root);
