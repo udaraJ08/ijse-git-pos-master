@@ -1,0 +1,7 @@
+<component name="CopyrightManager">
+  <settings default="gdse-licence">
+    <module2copyright>
+      <element module="All" copyright="gdse-licence" />
+    </module2copyright>
+  </settings>
+</component>
