@@ -50,7 +50,7 @@ public class CustomerController {
         pstm.setObject(2, name);
         pstm.setObject(3, age);
         pstm.setObject(4, address);
-        if(pstm.execute()){
+        if(!pstm.execute()){
             new Alert(Alert.AlertType.INFORMATION, "SUCCESSFULLY ADDED").show();
         }else{
             new Alert(Alert.AlertType.ERROR, "An error occured while adding a customer").show();
