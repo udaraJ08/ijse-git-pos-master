@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.DashboardController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="437.0" prefWidth="353.0" style="-fx-background-color: #ecf0f1;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardController">
+   <children>
+      <Button fx:id="btnCustomer" layoutX="105.0" layoutY="190.0" mnemonicParsing="false" onAction="#btnCustomerOnAction" prefHeight="70.0" prefWidth="143.0" style="-fx-background-color: #2ecc71;" text="CUSTOMER" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="btnItem" layoutX="105.0" layoutY="290.0" mnemonicParsing="false" onAction="#btnItemOnAction" prefHeight="70.0" prefWidth="143.0" style="-fx-background-color: #3498db;" text="ITEM" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Label layoutX="66.0" layoutY="44.0" text="POS-MASTER">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </Label>
+   </children>
 </AnchorPane>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="671.0" prefWidth="391.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerController">
+   <children>
+      <Label layoutX="101.0" layoutY="32.0" text="Add Customer" textFill="#444444">
+         <font>
+            <Font name="Impact" size="33.0" />
+         </font>
+         <effect>
+            <DropShadow color="#b2b2b2" height="5.0" offsetX="3.0" offsetY="3.0" radius="2.0" width="5.0" />
+         </effect>
+      </Label>
+      <TextField fx:id="txtCustomerID" layoutX="40.0" layoutY="176.0" onAction="#txtCustomerIDOnAction" prefHeight="42.0" prefWidth="105.0" />
+      <TextField fx:id="txtCustomerName" layoutX="42.0" layoutY="270.0" onAction="#txtCustomerNameOnAction" prefHeight="42.0" prefWidth="308.0" />
+      <TextField fx:id="txtCustomerAge" layoutX="42.0" layoutY="371.0" onAction="#txtCustomerAgeOnAction" prefHeight="42.0" prefWidth="308.0" />
+      <TextField fx:id="txtCustomerAddress" layoutX="43.0" layoutY="480.0" onAction="#txtCustomerAddressOnAction" prefHeight="42.0" prefWidth="308.0" />
+      <Button fx:id="btnCreateCustomer" layoutX="86.0" layoutY="571.0" mnemonicParsing="false" onAction="#btnCreateCustomerOnAction" prefHeight="52.0" prefWidth="222.0" style="-fx-background-color: #27ae60;" text="CREATE CUSTOMER" textFill="WHITE">
+         <font>
+            <Font name="Impact" size="19.0" />
+         </font>
+      </Button>
+      <Label layoutX="43.0" layoutY="147.0" text="Customer ID">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="btnBack" fitHeight="31.0" fitWidth="31.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#btnBackOnAction">
+         <image>
+            <Image url="@../assets/previous.png" />
+         </image>
+         <effect>
+            <DropShadow color="#848484" offsetX="2.0" offsetY="2.0" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="43.0" layoutY="242.0" text="Customer Name">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="342.0" text="Customer age">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="45.0" layoutY="446.0" text="Customer address">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
