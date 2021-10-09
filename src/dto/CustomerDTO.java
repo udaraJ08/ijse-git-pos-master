@@ -11,13 +11,13 @@ public class CustomerDTO {
 
     private String customerID;
     private String name;
-    private String age;
+    private int age;
     private String address;
 
     public CustomerDTO() {
     }
 
-    public CustomerDTO(String customerID, String name, String age, String address) {
+    public CustomerDTO(String customerID, String name, int age, String address) {
         this.customerID = customerID;
         this.name = name;
         this.age = age;
@@ -40,11 +40,11 @@ public class CustomerDTO {
         this.name = name;
     }
 
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
